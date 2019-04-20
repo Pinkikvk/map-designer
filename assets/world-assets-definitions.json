@@ -1,0 +1,142 @@
+[
+    {
+        "name": "terrain",
+        "description": "Basic land",
+        "frames": ["land/terrain_center.png"],
+        "isLand": [[true]]
+    },
+    {
+        "name": "grass-a",
+        "description": "Grass variant A",
+        "frames": ["land/grass_center_A_f1.png", "land/grass_center_A_f2.png", "land/grass_center_A_f3.png"],
+        "isLand": [[true]]
+    },
+    {
+        "name": "grass-b",
+        "description": "Grass variant B",
+        "frames": ["land/grass_center_B_f1.png", "land/grass_center_B_f2.png", "land/grass_center_B_f3.png"],
+        "isLand": [[true]]
+    },
+    {
+        "name": "grass-c",
+        "description": "Grass variant C",
+        "frames": ["land/grass_center_C_f1.png", "land/grass_center_C_f2.png", "land/grass_center_C_f3.png"],
+        "isLand": [[true]]
+    },
+    {
+        "name": "grass-d",
+        "description": "Grass variant D",
+        "frames": ["land/grass_center_D_f1.png", "land/grass_center_D_f2.png", "land/grass_center_D_f3.png"],
+        "isLand": [[true]]
+    },
+
+
+
+
+
+    {
+        "name": "ocean",
+        "description": "Basic water",
+        "frames": ["water/ocean.png"],
+        "isLand": [[true]]
+    },
+
+    {
+        "name": "shore-ne",
+        "description": "Shore NE",
+        "frames": ["shore/terrain_corner_northeast_f1.png", "shore/terrain_corner_northeast_f2.png", "shore/terrain_corner_northeast_f3.png"],
+        "isLand": [[false, false, false], [true, false, false]]
+    },
+    {
+        "name": "shore-nw",
+        "description": "Shore NW",
+        "frames": ["shore/terrain_corner_northwest_f1.png", "shore/terrain_corner_northwest_f2.png", "shore/terrain_corner_northwest_f3.png"],
+        "isLand": [[false, false, false], [false, false, true]]
+    },
+    {
+        "name": "shore-se",
+        "description": "Shore SE",
+        "frames": ["shore/terrain_corner_southeast_f1.png", "shore/terrain_corner_southeast_f2.png", "shore/terrain_corner_southeast_f3.png"],
+        "isLand": [[true, false, false], [false, false, false], [false, false, false]]
+    },
+    {
+        "name": "shore-sw",
+        "description": "Shore SW",
+        "frames": ["shore/terrain_corner_southwest_f1.png", "shore/terrain_corner_southwest_f2.png", "shore/terrain_corner_southwest_f3.png"],
+        "isLand": [[false, false, true], [false, false, false], [false, false, false]]
+    },
+
+    {
+        "name": "shore-ine",
+        "description": "Shore inner NE",
+        "frames": ["shore/terrain_corner_inner_northeast_f1.png", "shore/terrain_corner_inner_northeast_f2.png", "shore/terrain_corner_inner_northeast_f3.png"],
+        "isLand": [[true, true, true], [false, false, true], [false, false, true]]
+    },
+    {
+        "name": "shore-inw",
+        "description": "Shore inner NW",
+        "frames": ["shore/terrain_corner_inner_northwest_f1.png", "shore/terrain_corner_inner_northwest_f2.png", "shore/terrain_corner_inner_northwest_f3.png"],
+        "isLand": [[true, true, true], [true, false, false], [true, false, false]]
+    },
+    {
+        "name": "shore-ise",
+        "description": "Shore inner SE",
+        "frames": ["shore/terrain_corner_inner_southeast_f1.png", "shore/terrain_corner_inner_southeast_f2.png", "shore/terrain_corner_inner_southeast_f3.png"],
+        "isLand": [[false, false, true], [true, true, true]]
+    },
+    {
+        "name": "shore-isw",
+        "description": "Shore inner SW",
+        "frames": ["shore/terrain_corner_inner_southwest_f1.png", "shore/terrain_corner_inner_southwest_f2.png", "shore/terrain_corner_inner_southwest_f3.png"],
+        "isLand": [[true, false, false], [true, true, true]]
+    },
+
+    {
+        "name": "shore-ea",
+        "description": "Shore E variant A",
+        "frames": ["shore/terrain_edge_east_A_f1.png", "shore/terrain_edge_east_A_f2.png", "shore/terrain_edge_east_A_f3.png"],
+        "isLand": [[true, false, false]]
+    },
+    {
+        "name": "shore-eb",
+        "description": "Shore E variant B",
+        "frames": ["shore/terrain_edge_east_B_f1.png", "shore/terrain_edge_east_B_f2.png", "shore/terrain_edge_east_B_f3.png"],
+        "isLand": [[true, false, false]]
+    },
+    {
+        "name": "shore-wa",
+        "description": "Shore W variant A",
+        "frames": ["shore/terrain_edge_west_A_f1.png", "shore/terrain_edge_west_A_f2.png", "shore/terrain_edge_west_A_f3.png"],
+        "isLand": [[false, false, true]]
+    },
+    {
+        "name": "shore-wb",
+        "description": "Shore W variant B",
+        "frames": ["shore/terrain_edge_west_B_f1.png", "shore/terrain_edge_west_B_f2.png", "shore/terrain_edge_west_B_f3.png"],
+        "isLand": [[false, false, true]]
+    },
+    {
+        "name": "shore-na",
+        "description": "Shore N variant A",
+        "frames": ["shore/terrain_edge_north_A_f1.png", "shore/terrain_edge_north_A_f2.png", "shore/terrain_edge_north_A_f3.png"],
+        "isLand": [[false], [true]]
+    },
+    {
+        "name": "shore-nb",
+        "description": "Shore N variant B",
+        "frames": ["shore/terrain_edge_north_B_f1.png", "shore/terrain_edge_north_B_f2.png", "shore/terrain_edge_north_B_f3.png"],
+        "isLand": [[false], [true]]
+    },
+    {
+        "name": "shore-sa",
+        "description": "Shore S variant A",
+        "frames": ["shore/terrain_edge_south_A_f1.png", "shore/terrain_edge_south_A_f2.png", "shore/terrain_edge_south_A_f3.png"],
+        "isLand": [[true], [false], [false]]
+    },
+    {
+        "name": "shore-sb",
+        "description": "Shore S variant B",
+        "frames": ["shore/terrain_edge_south_B_f1.png", "shore/terrain_edge_south_B_f2.png", "shore/terrain_edge_south_B_f3.png"],
+        "isLand": [[true], [false], [false]]
+    }
+]

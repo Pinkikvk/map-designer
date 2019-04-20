@@ -1,0 +1,190 @@
+{
+    "tiles": [
+
+        {
+            "x": 2,
+            "y": 2,
+            "assetName": "shore-nw"
+        },
+        {
+            "x": 5,
+            "y": 2,
+            "assetName": "shore-ne"
+        },
+        {
+            "x": 5,
+            "y": 4,
+            "assetName": "shore-isw"
+        },
+        {
+            "x": 7,
+            "y": 4,
+            "assetName": "shore-na"
+        },
+        {
+            "x": 8,
+            "y": 4,
+            "assetName": "shore-nb"
+        },
+        {
+            "x": 9,
+            "y": 4,
+            "assetName": "shore-na"
+        },
+        {
+            "x": 10,
+            "y": 4,
+            "assetName": "shore-ne"
+        },
+        {
+            "x": 10,
+            "y": 6,
+            "assetName": "shore-ea"
+        },
+        {
+            "x": 10,
+            "y": 7,
+            "assetName": "shore-eb"
+        },
+        {
+            "x": 10,
+            "y": 8,
+            "assetName": "shore-isw"
+        },
+        {
+            "x": 12,
+            "y": 8,
+            "assetName": "shore-ne"
+        },
+        {
+            "x": 12,
+            "y": 10,
+            "assetName": "shore-se"
+        },
+        {
+            "x": 11,
+            "y": 10,
+            "assetName": "shore-sa"
+        },
+        {
+            "x": 10,
+            "y": 10,
+            "assetName": "shore-sa"
+        },
+        {
+            "x": 9,
+            "y": 10,
+            "assetName": "shore-sb"
+        },
+        {
+            "x": 8,
+            "y": 10,
+            "assetName": "shore-sb"
+        },
+        {
+            "x": 9,
+            "y": 10,
+            "assetName": "shore-sb"
+        },
+        {
+            "x": 5,
+            "y": 10,
+            "assetName": "shore-sw"
+        },
+        {
+            "x": 5,
+            "y": 7,
+            "assetName": "shore-ine"
+        },
+        {
+            "x": 2,
+            "y": 7,
+            "assetName": "shore-sw"
+        },
+        {
+            "x": 2,
+            "y": 6,
+            "assetName": "shore-wa"
+        },
+        {
+            "x": 2,
+            "y": 5,
+            "assetName": "shore-wb"
+        },
+        {
+            "x": 2,
+            "y": 4,
+            "assetName": "shore-wa"
+        },
+        {
+            "x": 5,
+            "y": 6,
+            "assetName": "grass-c"
+        },
+        {
+            "x": 6,
+            "y": 6,
+            "assetName": "terrain"
+        },
+        {
+            "x": 7,
+            "y": 6,
+            "assetName": "terrain"
+        },
+        {
+            "x": 8,
+            "y": 6,
+            "assetName": "terrain"
+        },
+        {
+            "x": 9,
+            "y": 6,
+            "assetName": "terrain"
+        },
+        {
+            "x": 7,
+            "y": 7,
+            "assetName": "grass-a"
+        },
+        {
+            "x": 8,
+            "y": 7,
+            "assetName": "grass-a"
+        },
+        {
+            "x": 9,
+            "y": 7,
+            "assetName": "grass-a"
+        },
+        {
+            "x": 7,
+            "y": 8,
+            "assetName": "terrain"
+        },
+        {
+            "x": 8,
+            "y": 8,
+            "assetName": "grass-a"
+        },
+        {
+            "x": 9,
+            "y": 8,
+            "assetName": "grass-a"
+        },
+        {
+            "x": 7,
+            "y": 9,
+            "assetName": "terrain"
+        },
+        {
+            "x": 8,
+            "y": 9,
+            "assetName": "terrain"
+        },
+        {
+            "x": 9,
+            "y": 9,
+            "assetName": "terrain"
+        }
+    ]
+}

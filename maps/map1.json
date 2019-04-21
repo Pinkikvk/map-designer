@@ -52,14 +52,19 @@
             "assetName": "shore-isw"
         },
         {
-            "x": 12,
+            "x": 13,
             "y": 8,
             "assetName": "shore-ne"
         },
         {
-            "x": 12,
+            "x": 13,
             "y": 10,
             "assetName": "shore-se"
+        },
+        {
+            "x": 12,
+            "y": 10,
+            "assetName": "shore-sa"
         },
         {
             "x": 11,
@@ -142,11 +147,6 @@
             "assetName": "terrain"
         },
         {
-            "x": 7,
-            "y": 7,
-            "assetName": "grass-a"
-        },
-        {
             "x": 8,
             "y": 7,
             "assetName": "grass-a"
@@ -157,11 +157,6 @@
             "assetName": "grass-a"
         },
         {
-            "x": 7,
-            "y": 8,
-            "assetName": "terrain"
-        },
-        {
             "x": 8,
             "y": 8,
             "assetName": "grass-a"
@@ -170,11 +165,6 @@
             "x": 9,
             "y": 8,
             "assetName": "grass-a"
-        },
-        {
-            "x": 7,
-            "y": 9,
-            "assetName": "terrain"
         },
         {
             "x": 8,

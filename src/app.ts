@@ -6,19 +6,20 @@ import { MapBuilder } from "./maps/map-builder";
 import worldAssetsDefinitions from "../assets/world-assets-definitions.json";
 import map1 from "../maps/map1.json";
 import { WorldAssetDefinition } from "./assets/world-asset-definition";
+import { GridManager } from "./maps/grid-manager";
+import { MapEditor } from "./maps/map-editor";
 
 PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST;
-let app = new PIXI.Application({width: 512, height: 512});
+let app = new PIXI.Application({width: 960, height: 960});
+let mainContainer = new PIXI.Container;
+app.stage.scale.set(2,2);
+app.stage.addChild(mainContainer);
 
-document.body.appendChild(app.view);
-
-let grass: PIXI.Sprite;
+document.getElementsByClassName("canvas-placeholder")[0].appendChild(app.view);
 
 WorldSpriteLoader.CreateLoader(worldAssetsDefinitions).then((loader) => {
-    let mapBuilder = new MapBuilder(loader, 16);
-    let mapContainer = mapBuilder.BuildMap(map1);
-    mapContainer.scale.set(2,2);
-    app.stage.addChild(mapContainer);
+    let mapEditor = new MapEditor(app, loader, 16, 30);
+    mapEditor.LoadMap(map1, worldAssetsDefinitions);
 });
 
 // PIXI.loader

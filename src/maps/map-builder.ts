@@ -1,32 +1,35 @@
 import { WorldSpriteLoader } from "../assets/world-sprite-loader";
 import { MapDefinition, MapTileDefinition } from "./map-definition";
 import _ from "lodash";
+import { WorldSprite } from "../assets/world-sprite";
 
 export class MapBuilder {
 
     private worldSpriteLoader: WorldSpriteLoader
     private tileSize: number;
+    private worldSize: number;
 
-    public constructor(worldSpriteLoader: WorldSpriteLoader, tileSize: number) {
+    public constructor(worldSpriteLoader: WorldSpriteLoader, tileSize: number, worldSize: number) {
         this.worldSpriteLoader = worldSpriteLoader;
         this.tileSize = tileSize;
+        this.worldSize = worldSize;
     }
 
-    public BuildMap(mapDefinition: MapDefinition): PIXI.Container {
-        let usedTiles = _.times(16, () => _.times(16, _.constant(false)));
-        let mapContainer = new PIXI.Container;
+    public BuildMapTiles(mapDefinition: MapDefinition): WorldSprite[] {
+        let usedTiles = _.times(this.worldSize, () => _.times(this.worldSize, _.constant(false)));
+        let mapTiles: WorldSprite[] = [];
 
-        _.forEach(mapDefinition.tiles, tile => this.AddTile(tile, usedTiles, mapContainer));
-        this.FillEmptyTiles(usedTiles, mapContainer);
+        _.forEach(mapDefinition.tiles, tile => this.AddTile(tile, usedTiles, mapTiles));
+        //this.FillEmptyTiles(usedTiles, mapTiles);
 
-        return mapContainer;
+        return mapTiles;
     }
 
-    private AddTile(mapTileDefinition: MapTileDefinition, usedTiles: Boolean[][], mapContainer: PIXI.Container) {
+    private AddTile(mapTileDefinition: MapTileDefinition, usedTiles: Boolean[][], mapTiles: WorldSprite[]) {
         let asset = this.worldSpriteLoader.Load(mapTileDefinition.assetName);
         if (asset) {
-            asset.sprite.position.set(mapTileDefinition.x * this.tileSize, mapTileDefinition.y * this.tileSize);
-            mapContainer.addChild(asset.sprite);
+            asset.SetPosition(mapTileDefinition.x * this.tileSize, mapTileDefinition.y * this.tileSize);
+            mapTiles.push(asset);
 
             for (let x = 0; x < asset.width / this.tileSize; x++) {
                 for (let y = 0; y < asset.height / this.tileSize; y++) {
@@ -36,14 +39,14 @@ export class MapBuilder {
         }
     }
 
-    private FillEmptyTiles(usedTiles: Boolean[][], mapContainer: PIXI.Container) {
-        for (let x = 0; x < 16; x++) {
-            for (let y = 0; y < 16; y++) {
+    private FillEmptyTiles(usedTiles: Boolean[][], mapTiles: WorldSprite[]) {
+        for (let x = 0; x < this.worldSize; x++) {
+            for (let y = 0; y < this.worldSize; y++) {
                 if (usedTiles[x][y] === false) {
                     let asset = this.worldSpriteLoader.Load("ocean");
                     if (asset) {
-                        asset.sprite.position.set(x * this.tileSize, y * this.tileSize);
-                        mapContainer.addChild(asset.sprite);
+                        asset.SetPosition(x * this.tileSize, y * this.tileSize);
+                        mapTiles.push(asset);
                     }
                 }
             }

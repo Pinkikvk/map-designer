@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+}
+
+.main-panel {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+.canvas-placeholder {
+    padding: 0.5rem;
+}

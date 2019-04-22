@@ -23,10 +23,6 @@ body {
     margin-bottom: 0.5rem;
 }
 
-.btn-sm-text {
-    font-size: 0.5rem !important;
-}
-
 .cards {
     display: flex;
     flex-direction: row;

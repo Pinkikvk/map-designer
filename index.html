@@ -6,9 +6,29 @@
     </head>
     <body>
         
-        <div class="main-panel">
+        <div class="main-panel" >
+
             <div class="canvas-placeholder"></div>
-            <div class="side-panel">test</div>
+
+            <div class="side-panel" id="vue-app">
+                <div >
+                    <button type="button" class="btn btn-outline-info btn-sm" disabled>{{currentMode}}</button>
+                    <button type="button" class="btn btn-primary btn-sm" v-on:click="selectTool">Select</button>
+                    <button type="button" class="btn btn-secondary btn-sm" v-if="!gridVisible" v-on:click="showGrid">Show Grid</button>
+                    <button type="button" class="btn btn-secondary btn-sm" v-if="gridVisible" v-on:click="hideGrid">Hide Grid</button>
+                    <button type="button" class="btn btn-danger btn-sm" v-on:click="removeTool">Remove</button>
+                </div>
+
+                <div class="cards">
+                    <div v-for="worldAsset in worldAssets" v-bind:class="{ 'card card__selected': worldAsset.name == selectedWorldAssetName, 'card': worldAsset.name !== selectedWorldAssetName }" v-on:click="selectTile(worldAsset.name)">
+                        <div class="card--img">
+                            <img :src="'/assets/world/' + worldAsset.frames[0]" class="card--img"/>
+                        </div>
+                        <span class="card--label">{{worldAsset.description}}</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <script src="app.js" type="text/javascript"></script>

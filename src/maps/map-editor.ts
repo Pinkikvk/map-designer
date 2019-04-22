@@ -21,8 +21,14 @@ export class MapEditor implements IMapEditor {
     private mapTiles: WorldSprite[] = [];
     private mapTilesContainer: PIXI.Container;
     private tools: Tool[] = [];
-    private selectedTool: Tool;
-    private gridManager: GridManager;
+    
+    gridManager: GridManager;
+
+    selectedTool: Tool;
+    selectTool: SelectTool;
+    removeTool: RemoveTool;
+    addTool: AddTool;
+
 
     public constructor(app: PIXI.Application, worldSpriteLoader: WorldSpriteLoader, tileSize: number, worldSize: number) {
         this.app = app;
@@ -38,15 +44,14 @@ export class MapEditor implements IMapEditor {
         this.mapTilesContainer = new PIXI.Container;
         this.mapEditorContainer.addChild(this.mapTilesContainer);
 
-        let selectTool = new SelectTool(this.tileSize, this.worldSize, this.mapEditorContainer, this);
-        this.tools.push(selectTool);
-        let removeTool = new RemoveTool(this.tileSize, this.worldSize, this.mapEditorContainer, this);
-        this.tools.push(removeTool);
-        let addTool = new AddTool(this.tileSize, this.worldSize, this.mapEditorContainer, this, this.worldSpriteLoader);
-        this.tools.push(addTool);
+        this.selectTool = new SelectTool(this.tileSize, this.worldSize, this.mapEditorContainer, this);
+        this.tools.push(this.selectTool);
+        this.removeTool = new RemoveTool(this.tileSize, this.worldSize, this.mapEditorContainer, this);
+        this.tools.push(this.removeTool);
+        this.addTool = new AddTool(this.tileSize, this.worldSize, this.mapEditorContainer, this, this.worldSpriteLoader);
+        this.tools.push(this.addTool);
 
-        addTool.SetCurrentTile("shore-ea");
-        this.selectedTool = addTool;
+        this.selectedTool = this.selectTool;
 
         this.gridManager = new GridManager(tileSize, worldSize);
         this.mapEditorContainer.addChild(this.gridManager.GetGrid());

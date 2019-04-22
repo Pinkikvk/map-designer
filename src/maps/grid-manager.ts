@@ -43,4 +43,12 @@ export class GridManager {
             .moveTo(0,0)
             .lineTo(0, this.tileSize * this.worldSize);
     }
+
+    public ShowGrid(): void {
+        this.gridContainer.visible = true;
+    }
+
+    public HideGrid(): void {
+        this.gridContainer.visible = false;
+    }
 }

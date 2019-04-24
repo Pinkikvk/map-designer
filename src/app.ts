@@ -56,9 +56,20 @@ WorldSpriteLoader.CreateLoader(worldAssetsDefinitions).then((loader) => {
             removeTool: function() {
                 this.mapEditor.selectedTool = this.mapEditor.removeTool;
                 this.currentMode = "Remove";
+            },
+            save: function() {
+                this.mapEditor.SaveMapToFile();
+            },
+            load: function(evt: any) {
+                let file = <File>evt.target.files[0];
+                if (!!file) {
+                    this.mapEditor.LoadMapFromFile(file);
+                }
             }
         }
     })
 
-    mapEditor.LoadMap(map1, worldAssetsDefinitions);
+    document.getElementById('filePicker')!.addEventListener('change', vueApp.load.bind(vueApp), false);
+
+    mapEditor.LoadMap(map1);
 });

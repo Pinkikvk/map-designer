@@ -2,7 +2,7 @@ import { WorldAssetDefinition } from "./world-asset-definition";
 
 export class WorldSprite {
 
-    private definition: WorldAssetDefinition;
+    definition: WorldAssetDefinition;
     sprite: PIXI.Sprite;
     name: string;
     width: number;

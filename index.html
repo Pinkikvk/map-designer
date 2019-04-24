@@ -17,6 +17,10 @@
                     <button type="button" class="btn btn-secondary btn-sm" v-if="!gridVisible" v-on:click="showGrid">Show Grid</button>
                     <button type="button" class="btn btn-secondary btn-sm" v-if="gridVisible" v-on:click="hideGrid">Hide Grid</button>
                     <button type="button" class="btn btn-danger btn-sm" v-on:click="removeTool">Remove</button>
+                    <button type="button" class="btn btn-primary btn-sm" v-on:click="save">Save</button>
+                    <label class="btn btn-primary btn-sm btn-file">
+                        Load <input type="file" id="filePicker" style="display: none;">
+                    </label>
                 </div>
 
                 <div class="cards">

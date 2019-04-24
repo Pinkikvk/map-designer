@@ -3,13 +3,15 @@ import { GridManager } from "./grid-manager";
 import { WorldAssetDefinition } from "../assets/world-asset-definition";
 import { WorldSpriteLoader } from "../assets/world-sprite-loader";
 import { MapBuilder } from "./map-builder";
-import { MapDefinition } from "./map-definition";
-import _ from "lodash";
+import { MapDefinition, MapTileDefinition } from "./map-definition";
+import _, { map } from "lodash";
 import { Tool } from "./tools/tool";
 import { SelectTool } from "./tools/select-tool";
 import { RemoveTool } from "./tools/remove-tool";
 import { IMapEditor } from "./imap-editor";
 import { AddTool } from "./tools/add-tool";
+import { MapSaver } from "./map-saver";
+import { MapReader } from "./map-reader";
 
 export class MapEditor implements IMapEditor {
 
@@ -69,10 +71,29 @@ export class MapEditor implements IMapEditor {
         return ocena;
     }
 
-    public LoadMap(mapDefinition: MapDefinition, worldAssetsDefinitions: WorldAssetDefinition[]) {
+    public LoadMap(mapDefinition: MapDefinition) {
+        this.mapTilesContainer.removeChildren();
         let mapBuilder = new MapBuilder(this.worldSpriteLoader, this.tileSize, this.worldSize);
         this.mapTiles = mapBuilder.BuildMapTiles(mapDefinition);
         _.forEach(this.mapTiles, mt => this.mapTilesContainer.addChild(mt.sprite));
+    }
+
+    public LoadMapFromFile(file: File): void {
+        MapReader.Read(file).then(mapDefinition => {
+            this.LoadMap(mapDefinition);
+        });
+    }
+
+    public SaveMapToFile(): void {
+        let mapTilesDefinitions = _.map(this.mapTiles, t =>{
+            return <MapTileDefinition>{
+                x: t.x / this.tileSize,
+                y: t.y / this.tileSize,
+                assetName: t.name
+            };
+        });
+
+        MapSaver.SaveMap({tiles: mapTilesDefinitions});
     }
 
     public RemoveMapTile(worldSprite: WorldSprite): void {

@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Hello World</title>
+        <title>Map Editor</title>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
@@ -11,7 +11,7 @@
             <div class="canvas-placeholder"></div>
 
             <div class="side-panel" id="vue-app">
-                <div >
+                <div class="menu">
                     <button type="button" class="btn btn-outline-info btn-sm" disabled>{{currentMode}}</button>
                     <button type="button" class="btn btn-primary btn-sm" v-on:click="selectTool">Select</button>
                     <button type="button" class="btn btn-secondary btn-sm" v-if="!gridVisible" v-on:click="showGrid">Show Grid</button>
@@ -23,12 +23,14 @@
                     </label>
                 </div>
 
-                <div class="cards">
-                    <div v-for="worldAsset in worldAssets" v-bind:class="{ 'card card__selected': worldAsset.name == selectedWorldAssetName, 'card': worldAsset.name !== selectedWorldAssetName }" v-on:click="selectTile(worldAsset.name)">
-                        <div class="card--img">
-                            <img :src="'/assets/world/' + worldAsset.frames[0]" class="card--img"/>
+                <div class="assets">
+                    <div class="cards">
+                        <div v-for="worldAsset in worldAssets" v-bind:class="{ 'card card__selected': worldAsset.name == selectedWorldAssetName, 'card': worldAsset.name !== selectedWorldAssetName }" v-on:click="selectTile(worldAsset.name)">
+                            <div class="card--img">
+                                <img :src="'/assets/world/' + worldAsset.frames[0]" class="card--img"/>
+                            </div>
+                            <span class="card--label">{{worldAsset.description}}</span>
                         </div>
-                        <span class="card--label">{{worldAsset.description}}</span>
                     </div>
                 </div>
             </div>
